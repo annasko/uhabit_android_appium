@@ -4,7 +4,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class Config {
     public static String APPIUM_SERVER_URL = "http://localhost:4723/wd/hub";
-    public static String APK_PATH = "/Users/kobi/AndroidStudioProjects/uhabits/uhabits-android/build/outputs/apk/debug/uhabits-android-debug.apk";
+    public static String APK_PATH = "resources/uhabits-android-debug.apk";
 
     public static DesiredCapabilities getDesiredCapabilities() {
         DesiredCapabilities caps = new DesiredCapabilities();
