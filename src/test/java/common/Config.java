@@ -8,15 +8,15 @@ public class Config {
 
     public static DesiredCapabilities getDesiredCapabilities() {
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("deviceName", "Pixel 4");
+        System.getProperty("user.dir");
+        caps.setCapability("deviceName", "Emulator Pixel 3A");
         caps.setCapability("platformName", "Android");
-        caps.setCapability("platformVersion", "Android 11");
+        caps.setCapability("platformVersion", "11.0");
 //        caps.setCapability("noReset", false);
 //        caps.setCapability("fullReset", false);
         caps.setCapability("automationName", "UiAutomator2");
-        caps.setCapability("app", APK_PATH);
+        caps.setCapability("app", System.getProperty("user.dir") +"/" + APK_PATH);
         caps.setCapability("appPackage", "org.isoron.uhabits");
-       // caps.setCapability("appActivity", "org.insoro.uhabits.activities.habits.list.ListHabitsActivity");
         caps.setCapability("appActivity", "org.isoron.uhabits.MainActivity");
         return caps;
     }
