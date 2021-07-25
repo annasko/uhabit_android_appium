@@ -27,12 +27,27 @@ public class MainHabitsPage extends BasePage{
         super(driver, wait);
     }
 
-    public CreateHabitPage goToCreateHabitPage () {
+    public CreateHabitPage goToCreateHabitPageYesNo() {
         wait.until(ExpectedConditions.elementToBeClickable(addHabitButton));
         addHabitButton.click();
-        wait.until(ExpectedConditions.elementToBeClickable(moreOptionsButton));
-        moreOptionsButton.click();
+        wait.until(ExpectedConditions.elementToBeClickable(yesNoButton));
+        yesNoButton.click();
+//        wait.until(ExpectedConditions.elementToBeClickable(moreOptionsButton));
+//        moreOptionsButton.click();
         return new CreateHabitPage(driver,wait);
+    }
+
+    public CreateHabitPage goToCreateHabitPageMeasurable() {
+        wait.until(ExpectedConditions.elementToBeClickable(addHabitButton));
+        addHabitButton.click();
+        wait.until(ExpectedConditions.elementToBeClickable(measurableButton));
+        measurableButton.click();
+        return new CreateHabitPage(driver,wait);
+    }
+
+    public boolean isHabitsAddedCorrectly() {
+        wait.until(ExpectedConditions.visibilityOf(addHabitButton));
+        return addHabitButton.isDisplayed();
     }
 
 }

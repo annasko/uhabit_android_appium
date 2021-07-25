@@ -42,10 +42,19 @@ public class CreateHabitPage extends BasePage{
         super(driver, wait);
     }
 
-    public void fillInAllFields(String name){
+    public void fillInAllFieldsYesNoHabit(String name, String question, String note){
         wait.until(ExpectedConditions.visibilityOf(nameInput));
         nameInput.click();
         nameInput.sendKeys(name);
+        questionInput.click();
+        questionInput.sendKeys(question);
+        notesInput.click();
+        notesInput.sendKeys(note);
+        saveButton.click();
+        goToMainHabitsPage();
+    }
 
+    public MainHabitsPage goToMainHabitsPage() {
+        return new MainHabitsPage(driver, wait);
     }
 }

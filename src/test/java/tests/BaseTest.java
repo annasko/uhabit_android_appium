@@ -36,13 +36,19 @@ public class BaseTest {
 
     protected WelcomePage openWelcomePage() {return new WelcomePage(driver,wait);}
 
-//    @Test
-//    void shouldFail() {
-//        Assertions.assertTrue(false);
-//    }
+    @Test
+    void shouldFail() {
+        Assertions.assertTrue(false);
+    }
 
     @Test
     void shouldPass() {
         Assertions.assertTrue(true);
+    }
+
+    @Test
+    void shouldAddHabitPageOpened() {
+        WelcomePage welcomePage = openWelcomePage();
+        Assertions.assertTrue(welcomePage.isWelcomePageDisplayed("Loop Habit Tracker helps you create and maintain good habits."));
     }
 }

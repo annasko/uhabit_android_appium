@@ -9,15 +9,13 @@ import org.junit.jupiter.api.Test;
 public class AddHabitTests extends BaseTest{
 
 
-
     @Test
-    void shouldOpenHabitApp(){
+    void shouldAddedHabitYesNo(){
         WelcomePage welcomePage = openWelcomePage();
         MainHabitsPage mainHabitsPage = welcomePage.goToMainHabitsPage();
-        CreateHabitPage createHabitPage = mainHabitsPage.goToCreateHabitPage();
-        createHabitPage.fillInAllFields("An");
-        Assertions.assertTrue(welcomePage.isWelcomePageDisplayed("Loop Habit Tracker helps you create and maintain good habits."));
-
+        CreateHabitPage createHabitPage = mainHabitsPage.goToCreateHabitPageYesNo();
+        createHabitPage.fillInAllFieldsYesNoHabit("Exercise", "Did you excercise today?", "5x per day");
+        Assertions.assertTrue(mainHabitsPage.isHabitsAddedCorrectly());
     }
 
 }
